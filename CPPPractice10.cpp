@@ -27,7 +27,7 @@ int main()
     for (i = 0; i < n; i++)
         for (j = 0; j < m; j++)
         {
-            printf("\nВведите элементы массива [%d][%d] >> ", i, j);
+            printf("\nВведите элементы массива [%d][%d] >> ", i+1, j+1);
             scanf_s("%d", &ar[i][j]);
             cnt++;
         }
@@ -43,11 +43,13 @@ int main()
     for (j = 0; j < m; j++)
         for (i = 0; i < n; i++)
         {
-            for (g = 0; g < cnt; g++)
-            {
-                avg[g] = ar[i + 1][j + 1] / 2;
-            }
+            if (ar[i][j] > 0)
+                for (g = 0; g < cnt; g++)
+                {
+                    avg[g] = ar[i + 1][j] + ar[i][j + 1];
+                    printf("%f", avg[g]);
+                }
+
         }
-    
 }
 
